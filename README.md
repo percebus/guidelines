@@ -20,6 +20,19 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - So *spaces* it is;
   
  - Indentation columns: 2 or 4? **3**. Avoids lots of additional indentation issues that *PEP-8* runs into.
+  ```
+      var fourSpaces = function() {
+              return "This is too much!";
+          }
+
+    var twoSpaces = function() {
+          return "This is too crunched!";
+      }
+
+     var threeSpaces = function () {
+        return "This is about right :)";
+     }
+  ```
  - `id`, `Id`, or `ID`? **`ID`**. 
   - Just look how cool  `coolID`, looks!.
   - `coolId` reads like "cool aid".
