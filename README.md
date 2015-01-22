@@ -41,26 +41,8 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 2. Explicit is better than implicit
 
   - `Type`s are better than `var`
-
-   ```
-   /* Comments are most of the times ignored.
-    * Specially when you have quoted the entire speech for "V for Vendetta"
-    * but your api still sucks
-    */
-    function muahaha(magic, springles) { return muahaha.apply(null, _.reverse(arguments); }
-    ```
-   - `Enum`s are *good!*, way better than:
-   
-    - `README`s. You could have a thorough file with all the available `HTTP STATUS CODE`s... or simply provide an `Enum`
-    
-    - `String`s. 
-     ```
-     x['activStatus']; // bad. is prone to Chubby-fingers-syndrome. 
-
-     x[Statuses.ACTIV]; // good. Yields (in python or C#) `object Satuses does not contain element 'ACTIV'
-     ```
-
-   - `try/catch` are more explicit than `if/else`
+  - `Enum`s are *good!*, way better than:
+  - `try/catch` are more explicit than `if/else`
 
 
 3. Simple is better than complex
@@ -105,7 +87,15 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    - *CamelCase*
    - `class`' name in plural. Note that each `type` should be its own `enum`, instead of simply attaching all the `CONSTANTS` to classes, like in the *Titanim Appcelerator API*.
    - `constant` properties in *UPPER_CASE*
-   - Example: `var HttpStatuses = {OK:200, CREATED:201, ACCEPTED:202}`
+   - Example: 
+    ```
+    var HttpStatuses = {OK:200, CREATED:201, ACCEPTED:202}
+    
+    x['2001']; // bad. is prone to Chubby-fingers-syndrome. 
+
+    x[HttpStatuses.CREATD]; // good. Yields (in python or C#) `object Satuses does not contain element 'ACTIV'
+    ```
+
 
 - `instance`s
   - `oCamelCase` or `camelCase`
