@@ -21,15 +21,17 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   
  - Indentation columns: 2 or 4? **3**. Avoids lots of additional indentation issues that *PEP-8* runs into.
   ```
+  ....
       var fourSpaces = function() {
   //      return "return cannot go here, as it aligns with the function's name"
               return "This is too much!"
           }
-
+  ..
     var twoSpaces = function() {
       return "This is too crunched!"
     }
 
+  ...
      var threeSpaces = function () {
         return "This is about right :)"
      }
