@@ -14,37 +14,77 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 4. Make it better
 
 #Linting
- - Tabs or Spaces: *SPACES*. -Ideally- tabs! they solve the problem at hand! but in reality code ends up looking off. So use spaces;
- - Indentation columns: 2 or 4? *3*. Avoids lots of additional indentation issues that *PEP-8* runs into.
+ - *Tabs* or *Spaces*: **SPACES**. 
+  - -Ideally- tabs! they solve the problem at hand! Anybody could customize their gutter sizes to their own *IDE*s and need.
+  - But in reality code ends up looking "off". When working on a multi-location, OS, IDE, etc; team, is just begging to ruin someone's evening.
+  - So *spaces* it is;
+  
+ - Indentation columns: 2 or 4? **3**. Avoids lots of additional indentation issues that *PEP-8* runs into.
+ - `id`, `Id`, or `ID`? **`ID`**. 
+  - Just look how cool  `coolID`, looks!.
+  - `coolId` reads like "cool aid".
+
+ - *camelCase* or *snake_case*? **HYBRID**! `sportCar_userID` is more readable than `sportcarUserid` or `sportcar_userid`. 
+ - `'quotes_single'` or `"quotes_double"`: **BOTH**
+  - `'quotes_single'` are better than `"quotes_double"`
+  - `"quotes_double"` are better than `'escaped\'s`. `"quotes_double"` are particularly useful for cases `console`s, `print`s, `alert`s and so on.
+  - Examples:
+  ```
+  var str = 'this is a String';
+  console.log(str, "I was'n sure if this is what you've asked!");
+  ```
+  
 
 #Zen of programming
 1. Readability is king
 
 2. Explicit is better than implicit
 
-   2.1. `Enum`s are better than `README`s
+  - `Type`s are better than `var`
+
+   ```
+   /* Comments are most of the times ignored.
+    * Specially when you have quoted the entire speech for "V for Vendetta"
+    * but your api still sucks
+    */
+    function muahaha(magic, springles) { return muahaha.apply(null, _.reverse(arguments); }
+    ```
+   - `Enum`s are *good!*, way better than:
    
-   2.2. `Type`s are better than `var`
-   
-   2.3. `try/catch` are more explicit than `if/else`
+    - `README`s. You could have a thorough file with all the available `HTTP STATUS CODE`s... or simply provide an `Enum`
+    
+    - `String`s. 
+     ```
+     x['activStatus']; // bad. is prone to Chubby-fingers-syndrome. 
+
+     x[Statuses.ACTIV]; // good. Yields (in python or C#) `object Satuses does not contain element 'ACTIV'
+     ```
+
+   - `try/catch` are more explicit than `if/else`
+
 
 3. Simple is better than complex
 
-   3.1. Avoid `if/else`. Here are things that are better:
-
-      - *defaults*
-
-      - *ternaries*
-
+   3.1. Avoid `if/else` when possible. Here are things that are better:
+   
+      - *defaults*. `x || y`
+      - *ternaries* `isFoo ? a : b;`
       - `switch` 
 
-   3.2. `function`s are better than *method*s
+   3.2. `function`s are better than *method*s.
+
+   3.3. `field`s are better than `get`ers & `set`ers.
+
+
 
 4. Complex is better than complicated
 
-   4.1. Files bigger than 400 lines are messy
+   - `promise`s are better than `callback`s.
 
-   4.2. Lines longer than 120 characters are less readable
+   - Files bigger than 400 lines are messy
+
+   - Lines longer than 120 characters are less readable
+
 
 #Naming types
 - *Primitives* (`int`, `float`, `String`, `Number`)
@@ -54,15 +94,65 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
      `int locationID = 123456789`
 
 - `Collection`s (`Array`, `List`, `Enum`, `Dictionary`, `HashMap`, etc.)
-   - *camelCase*
-   - Alwas in plural
-   - Example: `var griffins = ['Peter', 'Stewie', 'Brian'];
+   - *camelCase* (starting with lowerCase)
+   - *ALWAYS* in **plural**
+   - Example: `var griffins = ['Peter', 'Stewie', 'Brian']`;
+
+- `class`es
+  - *CamelCase* (starting with UpperCase)
 
 - `Enum`s
    - *CamelCase*
-   - `Object`'s name in plural
+   - `class`' name in plural. Note that each `type` should be its own `enum`, instead of simply attaching all the `CONSTANTS` to classes, like in the *Titanim Appcelerator API*.
    - `constant` properties in *UPPER_CASE*
-   - Example: `var HttpStatuses: {OK:200, CREATED:201, ACCEPTED:202}`
+   - Example: `var HttpStatuses = {OK:200, CREATED:201, ACCEPTED:202}`
 
-Examples
-`IType oCoordinate = new Coordinate(x, y)` is better than `var coord = new Coordinate(x, y)`
+- `instance`s
+  - `oCamelCase` or `camelCase`
+  - `Type`: 
+   - minimum `interface` needed for that `scope` *Polymorphism*.
+   - **AVOID `var foo = new Thing();`**
+
+   ```
+   IType oCoordinate = new Coordinate(x, y) // good
+   
+   var coordinate = new Coordinate(x, y) // bad
+   
+   var coord = new Coordinate(x, y) // worst
+   
+   var c = new Coordinate(x, y) // ridiculous
+   ```
+
+   
+  - NOTES: Usually we only have 1 instance per `type` per `scope`. If there is only 1 instance, it is *way better* to say 
+  
+   **JavaScript example**
+   ```
+    /* oHTMLFormElement tells us right out of the bat that
+     * the class is called HTMLFormElement
+     * this class is either from the browser or within my project
+     * by "googling" 'HTMLFormElement' I immediatly find the src: 
+     * https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
+     */
+    var oHTMLFormElement = document.getElementById('#field'); // good
+
+    var element = document.getElementById('#field'); // bad
+
+    var elm = document.getElementById('#field'); // worst
+
+    var e = document.getElementById('#field'); // ridiculous
+    ```
+
+  - But what if my `class` name is an abomination like `SensorStationDirectionLaneType`? (real-life case actually *sigh*)
+   - Put some thought before rushing into naming classes.
+   - Also, you can use the minimum interface name.
+
+   **Pseudo C# example**
+   ```
+   /* If in this scope I am not concerned with all the added functionality of HTMLFormElement < HTMLElement < Element
+    * I can be more clear of what bit of code I intend to use in this scope
+    */
+   IElement oElement = new HTMLFormElement(); // good. This will blow up here
+   
+   var elm = getElm(); // bad. This will blow up until run-time
+   ```
