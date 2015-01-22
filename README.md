@@ -62,9 +62,15 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 
   - Beautiful is better than ugly
   - Flat is better than nested
-  - Sparse is better than dense
-  - Files bigger than 400 lines are messy
-  - Lines longer than 120 characters are less readable
+  - Modules are better than "monolyths"
+  - Sparse is better than dense. Tip: let it breathe
+  ```
+  (((x+1)*2)/5+1(12*(54))) //  bad
+  
+  (((x + 1) * 2)/5 + (12 * (54/2))) //  good
+  
+  (   (  (x +1)  *2  )/5   +   ( 12 * (54/2) )   ) //  better
+  ```
 
 2. Explicit is better than implicit
 
@@ -147,15 +153,14 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
     
     x['2001']; // bad. is prone to Chubby-fingers-syndrome. 
 
-    x[HttpStatuses.CREATD]; // good. Yields (in python or C#) `object Satuses does not contain element 'ACTIV'
+    x[HttpStatuses.CREATD]; // good. Yields (in python or C#) `object Satuses does not contain element 'CREATD'
     ```
 
 
 - `instance`s
   - `oCamelCase` or `camelCase`
-  - `Type`: 
-   - minimum `interface` needed for that `scope` *Polymorphism*.
-   - **AVOID `var foo = new Thing();`**
+  - `Type`: minimum `interface` needed for that `scope` *Polymorphism*.
+    **AVOID `var foo = new Thing();`**
 
    **Pseudo C# example**
    ```
