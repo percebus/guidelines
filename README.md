@@ -198,8 +198,12 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
     * of HTMLFormElement < HTMLElement < Element
     * I can be more clear of what bit of code I intend to use in this scope
     */
-   // good. This will blow up here if HTMLFormElement does not implement IElement
-   IElement oElement = new HTMLFormElement(); 
-   
-   var elm = getElm(); // bad. This will blow up until run-time
+    
+   // good. 
+   IElement oElement = new HTMLFormElement(); // This will blow up here if HTMLFormElement does not implement IElement
+   console.log(oElement.elements); // By this stage we don't have to worry about `.elements` not being there
+
+   // bad.
+   var elm = getElm(); 
+   console.log(elm.elements); //  This will blow up until run-time "Object undefined does not contain property 'elements'"
    ```
