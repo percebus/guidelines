@@ -194,10 +194,12 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 
    **Pseudo C# example**
    ```
-   /* If in this scope I am not concerned with all the added functionality of HTMLFormElement < HTMLElement < Element
+   /* If in this scope I am not concerned with all the added functionality 
+    * of HTMLFormElement < HTMLElement < Element
     * I can be more clear of what bit of code I intend to use in this scope
     */
-   IElement oElement = new HTMLFormElement(); // good. This will blow up here
+   // good. This will blow up here if HTMLFormElement does not implement IElement
+   IElement oElement = new HTMLFormElement(); 
    
    var elm = getElm(); // bad. This will blow up until run-time
    ```
