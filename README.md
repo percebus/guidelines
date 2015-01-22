@@ -58,6 +58,10 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 #Zen of programming
 1. Readability is king
 
+  - Beautiful is better than ugly
+  - Flat is better than nested
+  - Sparse is better than dense
+
 2. Explicit is better than implicit
 
   2.1. `Type`s are better than `var`
