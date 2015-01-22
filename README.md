@@ -19,7 +19,10 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - But in reality code ends up looking "off". When working on a multi-location, OS, IDE, etc; team, is just begging to ruin someone's evening.
   - So *spaces* it is;
   
- - Indentation columns: 2 or 4? **3**. Avoids lots of additional indentation issues that *PEP-8* runs into.
+ - Indentation columns: 2 or 4? **3**. *But 3 is not a pair number! HERECY!*... meh!
+ 
+  - If the world is divided by 2 or 4, the solution must lie in a middle ground.
+  - Avoids lots of additional indentation issues that *PEP-8* runs into.
   ```
   ....
       var fourSpaces = function() {
