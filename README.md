@@ -22,17 +22,19 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
  - Indentation columns: 2 or 4? **3**. Avoids lots of additional indentation issues that *PEP-8* runs into.
   ```
       var fourSpaces = function() {
-              return "This is too much!";
+  //      return "return cannot go here, as it aligns with the function's name"
+              return "This is too much!"
           }
 
     var twoSpaces = function() {
-      return "This is too crunched!";
+      return "This is too crunched!"
     }
 
      var threeSpaces = function () {
-        return "This is about right :)";
+        return "This is about right :)"
      }
   ```
+
  - `id`, `Id`, or `ID`? **`ID`**. 
   - Just look how cool  `coolID`, looks!.
   - `coolId` reads like "cool aid".
@@ -53,9 +55,11 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 
 2. Explicit is better than implicit
 
-  - `Type`s are better than `var`
-  - `Enum`s are *good!*, way better than:
-  - `try/catch` are more explicit than `if/else`
+  2.1. `Type`s are better than `var`
+  2.2. `try/catch` are more explicit than `if/else`
+  2.3. `Enum`s are *good!*, way better than:
+   - extensive `README` files.
+   - `dynamic` *run-time* `String`s 
 
 
 3. Simple is better than complex
@@ -116,6 +120,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    - minimum `interface` needed for that `scope` *Polymorphism*.
    - **AVOID `var foo = new Thing();`**
 
+   **Pseudo C# example**
    ```
    IType oCoordinate = new Coordinate(x, y) // good
    
@@ -137,13 +142,13 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
      * by "googling" 'HTMLFormElement' I immediatly find the src: 
      * https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
      */
-    var oHTMLFormElement = document.getElementById('#field'); // good
+    var oHTMLFormElement = document.getElementById('#field') // good
 
-    var element = document.getElementById('#field'); // bad
+    var element = document.getElementById('#field') // bad
 
-    var elm = document.getElementById('#field'); // worst
+    var elm = document.getElementById('#field') // worst
 
-    var e = document.getElementById('#field'); // ridiculous
+    var e = document.getElementById('#field') // ridiculous
     ```
 
   - But what if my `class` name is an abomination like `SensorStationDirectionLaneType`? (real-life case actually *sigh*)
