@@ -61,7 +61,9 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 2. Explicit is better than implicit
 
   2.1. `Type`s are better than `var`
+
   2.2. `try/catch` are more explicit than `if/else`
+
    - Errors should never pass silently.
    - Unless explicitly silenced.
   ```
