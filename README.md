@@ -14,6 +14,8 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 4. Make it better
 
 #Linting
+ - Max lines per file? usually around **400**
+ - 80char limit? *Nah!* but I do JSHint for **120**
  - *Tabs* or *Spaces*: **SPACES**. 
   - -Ideally- tabs! they solve the problem at hand! Anybody could customize their gutter sizes to their own *IDE*s and need.
   - But in reality code ends up looking "off". When working on a multi-location, OS, IDE, etc; team, is just begging to ruin someone's evening.
@@ -61,6 +63,8 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - Beautiful is better than ugly
   - Flat is better than nested
   - Sparse is better than dense
+  - Files bigger than 400 lines are messy
+  - Lines longer than 120 characters are less readable
 
 2. Explicit is better than implicit
 
@@ -116,10 +120,6 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 4. Complex is better than complicated
 
    - `promise`s are better than `callback`s.
-
-   - Files bigger than 400 lines are messy
-
-   - Lines longer than 120 characters are less readable
 
 
 #Naming types
