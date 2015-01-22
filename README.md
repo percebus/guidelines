@@ -62,6 +62,32 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 
   2.1. `Type`s are better than `var`
   2.2. `try/catch` are more explicit than `if/else`
+   - Errors should never pass silently.
+   - Unless explicitly silenced.
+  ```
+  // *** example of bad error handling
+     if ( _.isNumber(x) ) {
+        keepMoving(x)
+     }
+     else {
+        // something went wrong
+        keepMoving(0)
+     }
+
+  // *** exmaple
+     var result;
+     try {// this denotes that your code is willing to handle the code
+        if ( !_.isNumber(x) ) {
+           throw new TypeError('x not instanceof Number');
+        }
+        result = x;
+     } catch(err) {// this denotes that your code is not thorough in handling the error
+        console.error(err);
+        result = 0;
+     }
+     keepMoving(result);
+  ```
+
   2.3. `Enum`s are *good!*, way better than:
    - extensive `README` files.
    - `dynamic` *run-time* `String`s 
