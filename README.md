@@ -19,7 +19,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
  - *Tabs* or *Spaces*: **SPACES**. 
   - -Ideally- tabs! they solve the problem at hand! Anybody could customize their gutter sizes to their own *IDE*s and need.
   - But in reality code ends up looking "off". When working on a multi-location, OS, IDE, etc; team, is just begging to ruin someone's evening.
-  - So *spaces* it is;
+  - So *spaces* it is.
   
  - Indentation columns: 2 or 4? **3**. *But 3 is not a pair number! HERECY!*... meh!
  
@@ -114,7 +114,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    3.1. Avoid `if/else` when possible. Here are things that are better:
    
       - *defaults*. `x || y`
-      - *ternaries* `isFoo ? a : b;`
+      - *ternaries* `isFoo ? a : b`
       - `switch` 
 
    3.2. `function`s are better than *method*s.
@@ -184,13 +184,13 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
      * by "googling" 'HTMLFormElement' I immediatly find the src: 
      * https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
      */
-    var oHTMLFormElement = document.getElementById('#field') // good
+    var oHTMLFormElement = document.getElementById('field') // good
 
-    var element = document.getElementById('#field') // bad
+    var element = document.getElementById('field') // bad
 
-    var elm = document.getElementById('#field') // worst
+    var elm = document.getElementById('field') // worst
 
-    var e = document.getElementById('#field') // ridiculous
+    var e = document.getElementById('field') // ridiculous
     ```
 
   - But what if my `class` name is an abomination like `SensorStationDirectionLaneType`? (real-life case actually *sigh*)
