@@ -26,8 +26,8 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
           }
 
     var twoSpaces = function() {
-          return "This is too crunched!";
-      }
+      return "This is too crunched!";
+    }
 
      var threeSpaces = function () {
         return "This is about right :)";
