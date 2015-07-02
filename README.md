@@ -144,7 +144,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - *CamelCase* (starting with UpperCase)
 
 - `Enum`s
-   - *CamelCase*
+   - *PascalCase* A.K.A. "upper *CamelCase*"
    - `class`' name in plural. Note that each `type` should be its own `enum`, instead of simply attaching all the `CONSTANTS` to classes, like in the *Titanim Appcelerator API*.
    - `constant` properties in *UPPER_CASE*
    - Example: 
@@ -152,6 +152,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
     var HttpStatuses = {OK:200, CREATED:201, ACCEPTED:202}
     
     x['2001']; // bad. is prone to Chubby-fingers-syndrome. 
+    // (If you see an error, I did that on purpose)
 
     x[HttpStatuses.CREATD]; // good. Yields (in python or C#) `object Satuses does not contain element 'CREATD'
     ```
@@ -166,11 +167,17 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    ```
    IType oCoordinate = new Coordinate(x, y) // good
    
-   var coordinate = new Coordinate(x, y) // bad
+   var coordinate = new Coordinate(x, y) // meh
    
    var coord = new Coordinate(x, y) // worst
    
    var c = new Coordinate(x, y) // ridiculous
+   ```
+
+   When you have multiple instances, only use the 1st part to distinguish it
+   ```
+   topleftCoordinate     = new Coordinate(x, y)
+   bottomrightCoordinate = new Coordinate(x2, y2);
    ```
 
    
