@@ -53,7 +53,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - Examples:
   ```
   var str = 'this is a String';
-  console.log(str, "I was'n sure if this is what you've asked!");
+  console.log(str, "I wasn't sure if this is what you've asked!");
   ```
   
 
@@ -69,7 +69,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   
   (((x + 1) * 2)/5 + (12 * (54/2))) //  good
   
-  (   (  (x +1)  *2  )/5   +   ( 12 * (54/2) )   ) //  better
+  (   (  (x +1)  *2  )/5  +  ( 12 * (54/2) )   ) //  better
   ```
 
 2. Explicit is better than implicit
