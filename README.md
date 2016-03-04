@@ -21,7 +21,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
   - But in reality code ends up looking "off". When working on a multi-location, OS, IDE, etc; team, is just begging to ruin someone's evening.
   - So *spaces* it is.
   
- - Indentation columns: 2 or 4? **3**. *But 3 is not a pair number! HERECY!*... meh!
+ - Indentation columns: 2 or 4? **3**. *But 3 is not a pair number! HERESY!*... meh!
  
   - If the world is divided by 2 or 4, the solution must lie in a middle ground.
   - Avoids lots of additional indentation issues that *PEP-8* runs into.
@@ -141,7 +141,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    - Example: `var griffins = ['Peter', 'Stewie', 'Brian']`;
 
 - `class`es
-  - *CamelCase* (starting with UpperCase)
+  - *PascalCase* (like camelCase but starting with UpperCase)
 
 - `Enum`s
    - *PascalCase* A.K.A. "upper *CamelCase*"
@@ -159,7 +159,7 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
 
 
 - `instance`s
-  - `oCamelCase` or `camelCase`
+  - `camelCase` or `oCamelCase` (Inspired in Hungarian notation, but only for objects)
   - `Type`: minimum `interface` needed for that `scope` *Polymorphism*.
     **AVOID `var foo = new Thing();`**
 
@@ -174,9 +174,9 @@ After 10+ years of experience in the *IT* field with languages like *python*, *J
    var c = new Coordinate(x, y) // ridiculous
    ```
 
-   When you have multiple instances, only use the 1st part to distinguish it
+   When you have multiple instances, we can replace the hungarian "o" prefix with a unique name
    ```
-   topleftCoordinate     = new Coordinate(x, y)
+       topleftCoordinate = new Coordinate(x , y)
    bottomrightCoordinate = new Coordinate(x2, y2);
    ```
 
